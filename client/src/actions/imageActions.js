@@ -2,6 +2,12 @@
 import fetch from 'isomorphic-fetch';
 export function fetchImages() {
 
+  //resp = 60 images
+  
+  //resp.data[0].id
+  //resp.data[0].title
+  //resp.data[0].images[0].link
+
   return function(dispatch){
     dispatch({type: 'LOADING_IMAGES'})
     return fetch('https://api.imgur.com/3/gallery/hot/viral/day/0')
