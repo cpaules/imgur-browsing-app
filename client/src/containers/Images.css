@@ -1,0 +1,36 @@
+.ImgurImage {
+    width: 180px;
+    height: 180px;
+}
+
+.ImageCard {
+    position: relative;
+    height: 180px;
+    width: 180px;
+    padding: 3px;
+    float: left;
+  }
+
+.ImgurImageTitle {
+    position: absolute;
+    top: 10;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s, visibility .2s;
+
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.ImageCard:hover .ImgurImageTitle {
+    visibility: visible;
+    opacity: 1;
+}
