@@ -1,18 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import NavBar from './components/NavBar'
+import Images from './Images'
 
+const images = [
+  {
+    id: "asdj",
+    title: "title1",
+    link: "https://i.imgur.com/uOOY2zZ.jpg"
+  },
+  {
+    id: "asda",
+    title: "title2",
+    link: "https://i.imgur.com/4uuNGG4.jpg"
+  },
+  {
+    id: "fasf",
+    title: "title3",
+    link: "https://i.imgur.com/tlkRooa.jpg"
+  }
+]
 
 class App extends Component {
   render() {
     return (
-      <Router>
         <div className="App">
-          <NavBar />
+          app
+          <Images images={images} />
         </div>
-      </Router>
     );
   }
 }
