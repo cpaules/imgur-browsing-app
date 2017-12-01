@@ -1,5 +1,7 @@
-export default function imageReducer(state= {loading: false, pictures: []}, action) {
+export default (state= {loading: false, pictures: []}, action) => {
     switch ( action.type ) {
+      case 'GET_IMAGES_SUCCESS':
+        return action.images;
       case 'LOADING_IMAGES':
         return {...state, loading: true}
       case 'FETCH_IMAGES':
@@ -8,4 +10,4 @@ export default function imageReducer(state= {loading: false, pictures: []}, acti
         return state;
     }
   
-  }
+}

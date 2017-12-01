@@ -1,18 +1,11 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
+import images from './reducers/imageReducer'
 
-const imagesReducer = (state = [], action) => {
-    switch(action.type) {
-        case 'GET_IMAGES_SUCCESS':
-            return action.images;
-    
-        default: 
-            return state;
-    }
-}
+
 
 const reducers = combineReducers({
-    images: imagesReducer
+    images
 });
 
 const middleware = [thunk];
