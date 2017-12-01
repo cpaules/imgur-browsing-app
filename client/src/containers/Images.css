@@ -1,14 +1,15 @@
 .ImgurImage {
-    width: 180px;
-    height: 180px;
+    width: 205px;
+    height: 205px;
 }
 
 .ImageCard {
     position: relative;
-    height: 180px;
-    width: 180px;
+    height: 205px;
+    width: 205px;
     padding: 3px;
     float: left;
+    margin-left: 2px;
   }
 
 .ImgurImageTitle {
