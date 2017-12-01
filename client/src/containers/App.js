@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Images from './Images'
 
+
 // const images = [
 //   {
 //     id: "asdj",
@@ -28,19 +29,6 @@ class App extends Component {
     this.state = {
       images: []
     }
-  }
-
-  componentDidMount() {
-    fetch('https://api.imgur.com/3/gallery/hot/viral/day/0', { 
-      headers: { 'Authorization': 'Client-ID 93482c2dc9b13f9' }
-    })
-    .then(function(response) {
-      response.json()
-      .then(function(data) {
-        console.log(data)
-      })
-    })
-      //.then(imgur => this.setState( { data }))
   }
 
   render() {

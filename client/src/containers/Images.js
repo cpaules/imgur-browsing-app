@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 
 import './Images.css'
 import ImageCard from '../components/ImageCard'
+import { getImages } from '../actions/imageActions'
 
 class Images extends Component {
 
 
     componentDidMount() {
-        
+        this.props.getImages()
     }
 
     render() {
@@ -27,4 +28,4 @@ const mapStateToProps = (state) => {
     })
 }
 
-export default connect(mapStateToProps)(Images)
+export default connect(mapStateToProps, { getImages })(Images)

@@ -1,6 +1,6 @@
 
 import fetch from 'isomorphic-fetch';
-export function fetchImages() {
+export function getImages() {
 
   //resp = 60 images
   
@@ -10,14 +10,15 @@ export function fetchImages() {
 
   return function(dispatch){
     dispatch({type: 'LOADING_IMAGES'})
-    return fetch('https://api.imgur.com/3/gallery/hot/viral/day/0', { 
-      headers: {
-        'Authorization': Client-ID 93482c2dc9b13f9
-      }
+    fetch('https://api.imgur.com/3/gallery/hot/viral/day/0', { 
+      headers: { 'Authorization': 'Client-ID 93482c2dc9b13f9' }
     })
-      .then(res => { return res.json() })
-      .then(responseJson => {
-        dispatch({type: 'FETCH_IMAGES', payload: responseJson.images})
+    .then(function(response) {
+      response.json()
+      .then(function(data) {
+        console.log(data)
+      })
     })
+    //.then(imgur => this.setState( { data }))
   }
 }
