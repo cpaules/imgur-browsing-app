@@ -16,7 +16,8 @@ class Images extends Component {
         return (
         <div className="ImagesContainer">
             <h1> Imgur Images </h1>
-            {this.props.images.map(image => < ImageCard key={image.id} image={image} /> )}
+            {this.props.images.map(image => 
+            < ImageCard key={image.id} image={image} /> )}
         </div>
         )
     }    
