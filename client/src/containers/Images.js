@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Images.css'
+import ImageCard from '../components/ImageCard'
 
-const Images = (props) => (
-    <div>
-        <h1> Imgur Images </h1>
-        {props.images.map(image => 
-            <div className="ImageCard">
-                <img className="ImgurImage" src={image.link} alt={image.title} />
-                <p className="ImgurImageTitle"> {image.title} </p>
-            </div>
-        )}
-    </div>
-)
+class Images extends Component {
+
+    render() {
+        return (
+        <div className="ImagesContainer">
+            <h1> Imgur Images </h1>
+            {this.props.images.map(image => < ImageCard key={image.id} image={image} /> )}
+        </div>
+        )
+    }    
+}
 
 export default Images
