@@ -1,24 +1,19 @@
-
 import fetch from 'isomorphic-fetch';
-export function getImages() {
 
-  //resp = 60 images
-  
-  //resp.data[0].id
-  //resp.data[0].title
-  //resp.data[0].images[0].link
+const setImages = images => {
+  return {
+    type: 'GET_IMAGES_SUCCESS',
+    images
+  }
+}
 
-  return function(dispatch){
-    dispatch({type: 'LOADING_IMAGES'})
-    fetch('https://api.imgur.com/3/gallery/hot/viral/day/0', { 
+export const getImages = () => {
+  return dispatch => {
+    return fetch('https://api.imgur.com/3/gallery/hot/viral/day/0', { 
       headers: { 'Authorization': 'Client-ID 93482c2dc9b13f9' }
     })
-    .then(function(response) {
-      response.json()
-      .then(function(data) {
-        console.log(data)
-      })
-    })
-    //.then(imgur => this.setState( { data }))
+    .then(response => response.json())
+    .then(({ data }) => dispatch(setImages(data)))
+    .catch(error => console.log(error));
   }
 }
