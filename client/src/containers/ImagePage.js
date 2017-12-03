@@ -14,10 +14,12 @@ class ImagePage extends Component {
 
     render() {
         const { images } = this.props;
-
+        
         return (
         <div className="ImagesContainer">
             {images.map(image => < ImageCard key={image.id} image={image} /> )}
+            {console.log(images)
+            }
         </div>
         )
     }    
