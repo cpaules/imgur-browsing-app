@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
 
 import './Images.css'
 import ImageCard from '../components/ImageCard'
 import { getImages } from '../actions/imageActions'
+import ImageShow from './ImageShow'
 
 class Images extends Component {
 
@@ -13,11 +15,12 @@ class Images extends Component {
     }
 
     render() {
+        const { match, images } = this.props;
+
         return (
         <div className="ImagesContainer">
-            <h1> Imgur Images </h1>
-            {this.props.images.map(image => 
-            < ImageCard key={image.id} image={image} /> )}
+            {images.map(image => < ImageCard key={image.id} image={image} /> )}
+            <Route path={`${match.url}/:imageId`} component={ImageShow}/>
         </div>
         )
     }    
