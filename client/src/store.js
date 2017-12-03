@@ -1,17 +1,11 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import images from './reducers/imageReducer'
-
-
-
-const reducers = combineReducers({
-    images
-});
+import rootReducer from './reducers/index'
 
 const middleware = [thunk];
 
 export default createStore(
-    reducers,
+    rootReducer,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
     applyMiddleware(...middleware),
   );
