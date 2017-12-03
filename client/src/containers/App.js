@@ -3,7 +3,7 @@ import { BrowserRouter as Router, NavLink, Route } from 'react-router-dom'
 import './App.css';
 import ImagePage from './ImagePage'
 import ImageShow from './ImageShow'
-//import NavBar from '../components/NavBar'
+import About from '../components/About'
 
 class App extends Component {
 
@@ -17,8 +17,8 @@ class App extends Component {
             <NavLink style={{ marginRight: '10px' }} to="/about">About</NavLink> 
           </div>
           <Route exact path="/" component={ImagePage} />
-          <Route path='/favorites' render={() =>  <h3>Favorites</h3> }/>
-          <Route path='/about' render={() =>  <h3>About</h3> }/>
+          <Route exact path='/favorites' render={() =>  <h3>Favorites</h3> }/>
+          <Route exact path='/about' component={About}/>
           <Route path='/:imageId' component={ImageShow}/>
         </div>
       </Router>
