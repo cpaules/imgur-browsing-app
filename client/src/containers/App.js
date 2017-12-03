@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, NavLink, Route } from 'react-router-dom'
 import './App.css';
-import Images from './Images'
+import ImagePage from './ImagePage'
 //import NavBar from '../components/NavBar'
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
             <NavLink style={{ marginRight: '10px' }} to="/favorites">Favorites</NavLink>
             <NavLink style={{ marginRight: '10px' }} to="/about">About</NavLink> 
           </div>
-          <Route exact path="/" component={Images} />
+          <Route exact path="/" component={ImagePage} />
         </div>
       </Router>
     );
