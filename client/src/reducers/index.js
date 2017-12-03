@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import imageReducer from './imageReducer';
 
 const rootReducer =  combineReducers({
-    // cats: catsReducer
+    image: imageReducer
   });
   
   
