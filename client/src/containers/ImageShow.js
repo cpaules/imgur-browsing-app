@@ -8,7 +8,7 @@ class ImageShow extends Component {
 
   handleOnClick = (e, favoriteData) => {
     e.preventDefault()
-    createFavorite(favoriteData)
+    this.props.createFavorite(favoriteData)
   }
   
   render() {
