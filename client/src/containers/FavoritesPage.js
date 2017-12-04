@@ -16,8 +16,8 @@ class FavoritesPage extends Component {
             <h1>Favorites</h1>
             <ul>
                 {favorites.map((favorite, index) => (
-                    <li key={index}>{favorite.title} 
-                        <img className="ImgurImage" src={favorite.url} alt={favorite.title}/>
+                    <li key={index}>Title: {favorite.title}  URL: {favorite.url}
+                    
                     </li>
                 ))}
             </ul>

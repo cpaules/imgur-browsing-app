@@ -40,3 +40,8 @@
     height: 100%;
     width: auto;
 }
+
+ul {
+    margin: 0;
+    padding: 0;
+}
