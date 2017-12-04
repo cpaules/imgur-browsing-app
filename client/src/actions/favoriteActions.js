@@ -18,7 +18,7 @@ const setFavorites = favorites => {
 
 // ** Async Actions **
 
-export const createFavorite = favorite => {
+export const createFavorite = (favorite, history) => {
   return dispatch => {
     return fetch('http://localhost:3001/api/favorites', {
       method: "POST",
@@ -28,7 +28,10 @@ export const createFavorite = favorite => {
       body: JSON.stringify({ favorite: favorite })
     })
       .then(response => response.json())
-      .then(favorite => dispatch(addFavorite(favorite)))
+      .then(favorite => {
+        dispatch(addFavorite(favorite)) 
+        history.push('/favorites')
+      })
       .catch(error => console.log(error))
   }
 }
