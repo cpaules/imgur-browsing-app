@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.foot {
+  width: 100%;
+  padding: 1rem;
+  margin: .5rem 1rem;
+  text-align: center;
+  transition: 200ms;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;

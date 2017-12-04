@@ -5,6 +5,7 @@ import ImagePage from './ImagePage'
 import ImageShow from './ImageShow'
 import About from '../components/About'
 import FavoritesPage from './FavoritesPage'
+import Footer from '../components/Footer'
 
 class App extends Component {
 
@@ -23,6 +24,7 @@ class App extends Component {
             <Route path='/about' component={About}/>
             <Route path='/:imageId' component={ImageShow}/>
           </Switch>
+          <Footer title={"Student Project by Chase Paules"}/>
         </div>
       </Router>
     );
