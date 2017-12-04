@@ -38,7 +38,7 @@ class Api::FavoritesController < ApplicationController
         end
     
         def favorite_params
-          params.require(:favorite).permit(:title, :url, :is_album)
+          params.require(:favorite).permit(:title, :url)
         end
     
     end
