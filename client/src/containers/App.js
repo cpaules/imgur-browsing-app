@@ -4,6 +4,7 @@ import './App.css';
 import ImagePage from './ImagePage'
 import ImageShow from './ImageShow'
 import About from '../components/About'
+import FavoritesPage from './FavoritesPage'
 
 class App extends Component {
 
@@ -17,7 +18,7 @@ class App extends Component {
             <NavLink style={{ marginRight: '10px' }} to="/about">About</NavLink> 
           </div>
           <Route exact path="/" component={ImagePage} />
-          <Route path='/favorites' render={() =>  <h3>Favorites</h3> }/>
+          <Route path='/favorites' component={FavoritesPage}/>
           <Route path='/about' component={About}/>
           <Route path='/:imageId' component={ImageShow}/>
         </div>

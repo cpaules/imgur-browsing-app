@@ -9,13 +9,6 @@ const setImages = images => {
   }
 }
 
-const addFavorite = favorite => {
-  return {
-    type: 'CREATE_FAVORITE_SUCCESS',
-    favorite
-  }
-} 
-
 // ** Async Actions **
 
 export const getImages = () => {
@@ -26,22 +19,5 @@ export const getImages = () => {
     .then(response => response.json())
     .then(({ data }) => dispatch(setImages(data)))
     .catch(error => console.log(error));
-  }
-}
-
-export const createFavorite = favorite => {
-  return dispatch => {
-    return fetch('http://localhost:3001/api/favorites', {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ favorite: favorite })
-    })
-      .then(response => response.json())
-      .then(favorite => {
-        dispatch(addFavorite(favorite))
-      })
-      .catch(error => console.log(error))
   }
 }
