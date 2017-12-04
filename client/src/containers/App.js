@@ -24,7 +24,7 @@ class App extends Component {
             <Route path='/about' component={About}/>
             <Route path='/:imageId' component={ImageShow}/>
           </Switch>
-          <Footer title={"Student Project by Chase Paules"}/>
+          <Footer title={"Images Courtesy of Imgur's API"}/>
         </div>
       </Router>
     );
