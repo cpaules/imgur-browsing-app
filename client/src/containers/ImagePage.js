@@ -18,7 +18,7 @@ class ImagePage extends Component {
         return (
         <div className="ImagesContainer">
             {images.map(image => < ImageCard key={image.id} image={image} /> )}
-            {console.log(images)
+            {//console.log(images)
             }
         </div>
         )
@@ -26,6 +26,7 @@ class ImagePage extends Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state)
     return ({
         images: state.images
     })

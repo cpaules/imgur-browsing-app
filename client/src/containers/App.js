@@ -17,8 +17,8 @@ class App extends Component {
             <NavLink style={{ marginRight: '10px' }} to="/about">About</NavLink> 
           </div>
           <Route exact path="/" component={ImagePage} />
-          <Route exact path='/favorites' render={() =>  <h3>Favorites</h3> }/>
-          <Route exact path='/about' component={About}/>
+          <Route path='/favorites' render={() =>  <h3>Favorites</h3> }/>
+          <Route path='/about' component={About}/>
           <Route path='/:imageId' component={ImageShow}/>
         </div>
       </Router>

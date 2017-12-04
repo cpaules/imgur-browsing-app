@@ -18,7 +18,7 @@ const ImageShow = ({ image }) =>
   </div>
 
 const mapStateToProps = (state, ownProps) => {
-    console.log(state)
+  console.log(state)
   const image = state.images.find(image => image.id === ownProps.match.params.imageId)
 
   if (image) {
