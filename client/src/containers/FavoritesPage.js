@@ -11,7 +11,6 @@ class FavoritesPage extends Component {
 
     render() {
         const { favorites } = this.props;
-        console.log(this.props)
         return (
         <div className="FavoritesList">
             <h1>Favorites</h1>

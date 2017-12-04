@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, NavLink, Route } from 'react-router-dom'
+import { BrowserRouter as Router, NavLink, Route, Switch } from 'react-router-dom'
 import './App.css';
 import ImagePage from './ImagePage'
 import ImageShow from './ImageShow'
@@ -17,10 +17,12 @@ class App extends Component {
             <NavLink style={{ marginRight: '10px' }} to="/favorites">Favorites</NavLink>
             <NavLink style={{ marginRight: '10px' }} to="/about">About</NavLink> 
           </div>
-          <Route exact path="/" component={ImagePage} />
-          <Route path='/favorites' component={FavoritesPage}/>
-          <Route path='/about' component={About}/>
-          <Route path='/:imageId' component={ImageShow}/>
+          <Switch>
+            <Route exact path="/" component={ImagePage} />
+            <Route path='/favorites' component={FavoritesPage}/>
+            <Route path='/about' component={About}/>
+            <Route path='/:imageId' component={ImageShow}/>
+          </Switch>
         </div>
       </Router>
     );
