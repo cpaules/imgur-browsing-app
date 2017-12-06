@@ -8,13 +8,12 @@ class ImageShow extends Component {
 
   handleOnClick = (e, favoriteData) => {
     e.preventDefault()
-    this.props.createFavorite(favoriteData, this.props.history)
-    
+    this.props.createFavorite(favoriteData, this.props.history) 
   }
   
   render() {
     const { image } = this.props;
-    const favoriteData = {title: image.title, url: image.link}
+    const favoriteData = {title: image.title, url: image.link, count: 0}
     return (
       <div className="ImageShow"> 
       <h2>{image.title}</h2>

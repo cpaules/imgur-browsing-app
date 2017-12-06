@@ -24,7 +24,6 @@ class ImagePage extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return ({
         images: state.images
     })

@@ -16,6 +16,13 @@ const setFavorites = favorites => {
   }
 }
 
+export const updateCount = favorite => {
+  return {
+    type: 'UPDATE_FAVORITE_COUNT',
+    favorite
+  }
+}
+
 // ** Async Actions **
 
 export const createFavorite = (favorite, history) => {

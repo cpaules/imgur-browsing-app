@@ -6,15 +6,9 @@ import FavoritesLi from '../components/favoritesLi'
 
 class FavoritesPage extends Component {
 
-    constructor(props) {
-        super(props)
-        
-    }
-
     componentDidMount() {
         this.props.getFavorites()
     }
-
 
     render() {
         const { favorites } = this.props;
@@ -30,6 +24,7 @@ class FavoritesPage extends Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state)
     return ({
         favorites: state.favorites
     })

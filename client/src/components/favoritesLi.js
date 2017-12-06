@@ -1,30 +1,30 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { updateCount } from '../actions/favoriteActions.js'
 
 class favoritesLi extends Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            count: 0
-        }
-        
-    }
-
-    handleOnClick = () => { 
-        this.setState({count: this.state.count + 1})
+    handleOnClick = () => {
+        this.props.updateCount(this.props.favorite)
     }
 
     render() {
-        const { favorite } = this.props;
+        const { title, url, count } = this.props.favorite;
         return (
             <li> 
-                Title: {favorite.title}  URL: {favorite.url} 
-                <button type="button" onClick={this.handleOnClick}>Like count: {this.state.count}</button>
+                Title: {title}  URL: {url} 
+                <button type="button" onClick={this.handleOnClick}>
+                Like count: {count}
+                </button>
             </li>
-
         )
     }
 }
 
-export default favoritesLi
-    
+const mapStateToProps = state => {
+    return {
+      favorites: state.favorites
+    }
+  }
+
+export default connect(mapStateToProps, { updateCount })(favoritesLi)
