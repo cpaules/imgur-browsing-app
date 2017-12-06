@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateCount } from '../actions/favoriteActions.js'
+import { patchFavorite } from '../actions/favoriteActions.js'
 
 class favoritesLi extends Component {
 
     handleOnClick = () => {
-        this.props.updateCount(this.props.favorite)
+        this.props.favorite.count += 1
+        this.props.patchFavorite(this.props.favorite)
     }
 
     render() {
@@ -27,4 +28,4 @@ const mapStateToProps = state => {
     }
   }
 
-export default connect(mapStateToProps, { updateCount })(favoritesLi)
+export default connect(mapStateToProps, { patchFavorite })(favoritesLi)

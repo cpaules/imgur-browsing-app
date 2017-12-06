@@ -9,7 +9,7 @@ class FavoritesPage extends Component {
     componentDidMount() {
         this.props.getFavorites()
     }
-
+    
     render() {
         const { favorites } = this.props;
         return (

@@ -16,7 +16,7 @@ const setFavorites = favorites => {
   }
 }
 
-export const updateCount = favorite => {
+const updateCount = favorite => {
   return {
     type: 'UPDATE_FAVORITE_COUNT',
     favorite
@@ -49,5 +49,20 @@ export const getFavorites = () => {
       .then(response => response.json())
       .then(favorites => dispatch(setFavorites(favorites)))
       .catch(error => console.log(error));
+  }
+}
+
+export const patchFavorite = (favorite) => {
+  return dispatch => {
+    return fetch(`http://localhost:3001/api/favorites/${favorite.id}`, {
+      method: "PATCH",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ favorite: favorite })
+    })
+      .then(response => response.json())
+      .then(favorite => dispatch(updateCount(favorite)))
+      .catch(error => console.log(error))
   }
 }

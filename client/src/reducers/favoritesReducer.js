@@ -5,7 +5,6 @@ export default (state= [], action) => {
       case 'CREATE_FAVORITE_SUCCESS':
         return [...state, action.favorite]
       case 'UPDATE_FAVORITE_COUNT':
-        state[action.favorite.id - 1].count += 1
         return [...state] 
       default:
         return state;
