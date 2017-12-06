@@ -16,7 +16,9 @@ class FavoritesPage extends Component {
         <div className="FavoritesList">
             <h1>Favorites</h1>
             <ul>
-                {favorites.map((favorite, index) => <FavoritesLi key={index} favorite={favorite} /> )}
+                {favorites.sort((a,b) => {
+                    return b.count - a.count;
+                        }).map((favorite, index) => <FavoritesLi key={index} favorite={favorite} /> )}
             </ul>
         </div>
         )

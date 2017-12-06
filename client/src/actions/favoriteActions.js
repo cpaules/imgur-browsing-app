@@ -54,12 +54,13 @@ export const getFavorites = () => {
 
 export const patchFavorite = (favorite) => {
   return dispatch => {
+    let updatedFav = Object.assign ({}, favorite, {count: favorite.count + 1})
     return fetch(`http://localhost:3001/api/favorites/${favorite.id}`, {
       method: "PATCH",
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ favorite: favorite })
+      body: JSON.stringify({ favorite: updatedFav })
     })
       .then(response => response.json())
       .then(favorite => dispatch(updateCount(favorite)))
