@@ -14,6 +14,7 @@ class ImagePage extends Component {
 
     render() {
         const { images } = this.props;
+        console.log(images)
         
         return (
         <div className="ImagesContainer">

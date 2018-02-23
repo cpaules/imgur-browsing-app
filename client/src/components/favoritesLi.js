@@ -5,26 +5,14 @@ import { patchFavorite } from '../actions/favoriteActions.js'
 class favoritesLi extends Component {
 
     handleOnClick = () => {
-        // this.props.favorite.count += 1
         this.props.patchFavorite(this.props.favorite)
-    }
-
-    callApi = () => {
-        console.log('a')
-        fetch('http://localhost:3001/api/favorites')
-          .then(response => {
-                console.log('b')
-                return response.json()})
-          .then(favorites => console.log('c', favorites))
-        console.log('d')
     }
 
     render() {
         const { title, url, count } = this.props.favorite;
         return (
             <li> 
-                Title: {title}  URL: {url} 
-                <button type="button" onClick={this.callApi}>Call Api</button>
+                Title: {title}  URL: {url}
                 <button type="button" onClick={this.handleOnClick}>
                 Like count: {count}
                 </button>
